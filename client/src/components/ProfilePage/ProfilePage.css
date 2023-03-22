@@ -1,0 +1,136 @@
+.profileRight{
+    width: 50%;
+}
+.profileLeft{
+    width: 50%;
+}
+@media screen and (max-width: 1200px) {
+    .container1{
+        margin-top: 2rem;
+    }
+    .inputDetails{
+        margin-top: 0;
+    }
+    .inputDetails input{
+        width: 70%;
+        margin-top: 2rem;
+    }
+
+}
+@media screen and (min-width: 1051px) {
+    .profileCover{
+        display: none;
+    }
+    .belowIcons{
+        display: none;
+    }
+    .profileImage{
+        margin-top: 10rem;
+    }
+    .dukaanDaarImage{
+        position: absolute;
+        top: 10%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+    }
+}
+@media screen and (max-width: 1050px) {
+    .profileLeft,.profileRight{
+        width: 100%;
+    }
+    .profileCover{
+        position: absolute;
+        top: 12%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+    .profileRight{
+        margin-top: 2rem;
+    }
+    .profileBox{
+        flex-direction: column;
+    }
+    .profileText{
+        position: absolute;
+        top: 2%;
+        left: 50%;
+        transform: translate(-50%, -50%);   }
+    .profileImage{
+        width: 42%;
+    }
+    .logoutText{
+        width: 78%;
+        text-align: right;
+    }
+    .inputDetails input{
+        width: 65%;
+        margin-top: 1rem;
+    }
+    .profileImage{
+        width: 25%;
+    }
+    .inputDetails{
+        margin-top: 0;
+    }
+    .container1{
+        margin-top: 1.5rem;
+    }
+    .profileText{
+        margin-top: 2rem;
+    }
+    .DukaanImage{
+        display: none;
+    }
+  }
+ 
+  @media screen and (max-width: 600px) {
+    .profileImage{
+        width: 35%;
+    }
+  }
+  @media screen and (max-width: 468px){
+
+    .profileImage{
+        width: 40%;
+        margin-top: 5rem;
+    }
+    .inputDetails{
+            margin-top: 2.5rem;
+    }
+
+  }
+  @media screen and (max-width: 460px){
+    .newMember{
+        width: 100%;
+    }
+
+  }
+  @media screen and (max-width: 380px){
+    .profileCover{
+        top: 8%;
+      }
+    .profileRight{
+        margin-top: 1rem;
+    }
+    .profileDetails{
+        flex-direction: column;
+        height: 3.5rem;
+    }
+  }
+  @media screen and (max-width: 300px){
+    .profileCover{
+        top: 8%;
+      }
+    .profileRight{
+        margin-top: 0rem;
+    }
+    .profileDetails{
+        flex-direction: column;
+        height: 4.8rem;
+    }
+  }
+
+ 
+
+ 

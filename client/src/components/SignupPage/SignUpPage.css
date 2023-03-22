@@ -1,0 +1,95 @@
+.signupLeft{
+    width: 50%;
+}
+.signupRight{
+    width: 50%;
+}
+@media screen and (max-width: 1200px) {
+    .container1{
+        margin-top: 4rem;
+    }
+    .inputDetails{
+        margin-top: 0;
+    }
+    .inputDetails input{
+        width: 70%;
+        margin-top: 2rem;
+    }
+
+}
+@media screen and (max-width: 820px) {
+    .signupLeft,.signupRight{
+        width: 100%;
+    }
+    .signupBox{
+        flex-direction: column-reverse;
+    }
+    .signupLeftTitle{
+        position: absolute;
+        top: -5%;
+        left: 50%;
+        transform: translate(-50%, -50%);    }
+    .signupImage{
+        width: 42%;
+    }
+    .forgotText{
+        width: 78%;
+        text-align: center;
+    }
+    .inputDetails input{
+        width: 65%;
+        margin-top: 1rem;
+    }
+    .SignInGoogle button{
+        width: 65%;
+        margin-top: 1rem;
+    }
+    .signupImage{
+        width: 35%;
+    }
+    .inputDetails{
+        margin-top: 0;
+    }
+    .container1{
+        margin-top: 1.5rem;
+    }
+    .signupText{
+        margin-top: 8rem;
+    }
+    .SignInGoogle button{
+        margin-top: 2rem;
+    }
+  }
+ 
+
+  @media screen and (max-width: 468px){
+    .container1{
+        margin-top: 4rem;
+    }
+    .signupText{
+        margin-top: 8rem;
+    }
+    .signupImage{
+        width: 40%;
+        margin-top: 5rem;
+    }
+    .inputDetails{
+            margin-top: 2.5rem;
+    }
+
+  }
+  @media screen and (max-width: 460px){
+    .newMember{
+        width: 100%;
+    }
+
+  }
+  @media screen and (max-width: 270px){
+    .signupBt{
+        width: 50%;
+      }
+    .SignInGoogle button{
+        width: 96%;
+    }
+  }
+ 
