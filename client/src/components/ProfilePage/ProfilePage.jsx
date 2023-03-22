@@ -1,14 +1,19 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./ProfilePage.css"
 import {IoIosArrowForward} from "react-icons/io"
 import {AiOutlineHome} from "react-icons/ai"
 import {AiOutlineShoppingCart} from "react-icons/ai"
 import {AiOutlineUser} from "react-icons/ai"
-
+import {ImCross} from "react-icons/im"
 
 const ProfilePage = () => {
+    const[edit,setEdit]=useState(false);
+    const handleEdit=()=>{
+        setEdit(!edit);
+    }
   return (
-    <div className='container1 w-screen'>
+ 
+<div className='container1 w-screen'>
     <div className="profileBox flex ">
     <div className="profileLeft">
                         <img src="./DukaanDaarLogo.png" alt="DukaanDaar Logo" className='dukaanDaarImage'/>
@@ -50,7 +55,10 @@ const ProfilePage = () => {
                             </div>
                         </a>
                     </div>
-                        <div className="logoutText w-6/12  mt-4 m-auto text-right">
+                    <button className=" logInBt mt-4 rounded-xl bg-[#4d70ff] px-5 w-3/12 py-1.5 text-base font-semibold leading-7 text-white hover:bg-[#6581f2] " onClick={handleEdit}>
+                            Edit
+                            </button>
+                        <div className="logoutText w-6/12  mt-4 m-auto ">
                         <a className='text-[#ffffff] hover:underline cursor-pointer'>Log Out</a>
                         </div>
                  </div> 
@@ -67,7 +75,49 @@ const ProfilePage = () => {
                  </div>
             </div>
         </div>
-    </div>
+       
+    {
+        edit ? (
+        <div className="editBigContainer">
+            <div class="containerForm">
+                <div className='flex m-auto justify-between'>
+                <h1 class="form-title">Registration</h1>
+                <ImCross className=' text-white mt-4 cursor-pointer' onClick={handleEdit}/>
+                </div>
+
+                    <form action="#">
+                        <div class="main-user-info">
+                        <div class="user-input-box">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="text"
+                                    id="phoneNumber"
+                                    name="phoneNumber"
+                                    placeholder="Enter Phone Number"/>
+                        </div>
+                        <div class="user-input-box">
+                            <label for="email">Email</label>
+                            <input type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Enter Email"/>
+                        </div>
+                        <div class="user-input-box">
+                            <label for="address">Address</label>
+                            <input type="text"
+                                    id="address"
+                                    name="address"
+                                    placeholder="Enter Address"/>
+                        </div>
+                        </div>
+                        <div class="form-submit-btn">
+                        <input type="submit" value="Edit"/>
+                        </div>
+                    </form>
+            </div>
+        </div> 
+        ):("")
+    }
+     </div>
     )
 }
 
