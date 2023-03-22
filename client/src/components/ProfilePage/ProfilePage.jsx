@@ -11,6 +11,8 @@ const ProfilePage = () => {
     <div className='container1 w-screen'>
     <div className="profileBox flex ">
     <div className="profileLeft">
+                        <img src="./DukaanDaarLogo.png" alt="DukaanDaar Logo" className='dukaanDaarImage'/>
+                   
                 <img src="./ProfileAvatar.png" alt="profileImage" className='profileImage w-[50%] sm:w-[40%] m-auto mt-16 ' />
                 <div className="profileName text-center mt-4">
                     <p className='text-2xl text-[#ffffff] font-semibold'>Hi !<br/> John Doe</p>
@@ -51,9 +53,6 @@ const ProfilePage = () => {
                         <div className="logoutText w-6/12  mt-4 m-auto text-right">
                         <a className='text-[#ffffff] hover:underline cursor-pointer'>Log Out</a>
                         </div>
-                    <div className="DukaanImage">
-                        <img src="./DukaanDaarLogo.png" alt="DukaanDaar Logo" className='m-auto mt-10'/>
-                    </div>
                  </div> 
                  <div className="belowIcons flex justify-around mt-16">
                     <div className="homeIcon">
