@@ -19,15 +19,19 @@
 }
 @media screen and (min-width: 1051px) {
     .profileCover{
-        /* display: none; */
-        position: absolute;
-        top: 15%;
-        left: 25%;
-        transform: translate(-50%, -50%);
-        z-index: -1;
+        display: none;
     }
     .belowIcons{
         display: none;
+    }
+    .profileImage{
+        margin-top: 10rem;
+    }
+    .dukaanDaarImage{
+        position: absolute;
+        top: 10%;
+        left: 20%;
+        transform: translate(-50%, -50%);
     }
 }
 @media screen and (max-width: 1050px) {
