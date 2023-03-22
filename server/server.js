@@ -9,11 +9,11 @@ app.use(cors());
 const db = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "Chiklu@123",
-  database: "dukaandaar",
+  password: "Aryan@123",
+  database: "dukaan",
 });
 app.get("/api", (req, res) => {
-  const sqlSelect = "Select * from exmp";
+  const sqlSelect = "Select * from display_items";
   db.query(sqlSelect, (error, result) => {
     res.send(result);
   });
