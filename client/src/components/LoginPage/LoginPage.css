@@ -1,0 +1,98 @@
+.loginLeft{
+    width: 50%;
+}
+.loginRight{
+    width: 50%;
+}
+@media screen and (max-width: 1200px) {
+    .container1{
+        margin-top: 4rem;
+    }
+    .inputDetails{
+        margin-top: 0;
+    }
+    .inputDetails input{
+        width: 70%;
+        margin-top: 2rem;
+    }
+
+}
+@media screen and (max-width: 820px) {
+    .loginLeft,.loginRight{
+        width: 100%;
+    }
+    .loginBox{
+        flex-direction: column-reverse;
+    }
+    .loginLeftTitle{
+        position: absolute;
+        top: -5%;
+        left: 50%;
+        transform: translate(-50%, -50%);    }
+    .loginImage{
+        width: 42%;
+    }
+    .forgotText{
+        width: 78%;
+        text-align: center;
+    }
+    .inputDetails input{
+        width: 65%;
+        margin-top: 1rem;
+    }
+    .SignInGoogle button{
+        width: 65%;
+        margin-top: 1rem;
+    }
+    .loginImage{
+        width: 35%;
+    }
+    .inputDetails{
+        margin-top: 0;
+    }
+    .container1{
+        margin-top: 1.5rem;
+    }
+    .loginText{
+        margin-top: 2rem;
+    }
+    .SignInGoogle button{
+        margin-top: 8rem;
+    }
+  }
+ 
+
+  @media screen and (max-width: 468px){
+    .container1{
+        margin-top: 4rem;
+    }
+    .loginText{
+        margin-top: 4rem;
+    }
+    .loginImage{
+        width: 40%;
+        margin-top: 5rem;
+    }
+    .inputDetails{
+            margin-top: 2.5rem;
+    }
+
+  }
+  @media screen and (max-width: 460px){
+    .newMember{
+        width: 100%;
+    }
+
+  }
+  @media screen and (max-width: 270px){
+    .logInBt{
+        width: 50%;
+      }
+    .SignInGoogle button{
+        width: 96%;
+    }
+  }
+
+
+
+ 

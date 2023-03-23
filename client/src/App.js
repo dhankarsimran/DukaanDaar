@@ -1,29 +1,43 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import HomePage from "./components/HomePage/HomePage";
+import LoginPage from "./components/LoginPage/LoginPage";
+import SignupPage from "./components/SignupPage/SignupPage";
+import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
+import ProfilePage from "./components/ProfilePage/ProfilePage";
+import Loader from "./components/Loader/Loader";
+import { IntroPage } from "./components/IntroPage/IntroPage";
 function App() {
-  const [backendData, setBackendData] = useState([{}]);
+  const [loading, setLoading] = useState(true);
+  const [userIn, setUserIn] = useState(false);
   useEffect(() => {
-    fetchData();
+    const t = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => {
+      clearTimeout(t);
+    };
   }, []);
-  const fetchData = async () => {
-    const response = await fetch("http://localhost:5000/api");
-    const data = await response.json();
-    setBackendData(data);
-  };
-
   return (
-    <div className="App">
-      <div>
-        {typeof backendData === "undefined" ? (
-          <p>Loading...</p>
-        ) : (
-          backendData.map((item, index) => (
-            <p key={item.id}>{`${index + 1},${item.name},${item.email}`}</p>
-          ))
-        )}
-      </div>
-    </div>
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="intro" element={<IntroPage />} />
+              <Route path="login" element={<LoginPage />} />
+              <Route path="signup" element={<SignupPage />} />
+              <Route path="forgotPassword" element={<ForgotPassword />} />
+              <Route path="profile" element={<ProfilePage />} />
+            </Routes>
+          </BrowserRouter>
+        </>
+      )}
+    </>
   );
 }
 
