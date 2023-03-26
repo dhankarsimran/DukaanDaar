@@ -1,25 +1,23 @@
-const dotenv = require('dotenv');
+import dotenv from 'dotenv';
+import cors from 'cors';
+import express from 'express';
+import morgan from 'morgan';
+import connectDb from './config/db.js';
+
+
 dotenv.config();
-const cors = require("cors");
-const express = require("express");
-const mysql = require("mysql2");
+
+connectDb();
+
 const app = express();
-const bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.json());
 app.use(cors());
+app.use(morgan('dev'))
+
 const PORT = process.env.PORT || 5000;
-const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE_NAME,
-});
-app.get("/api", (req, res) => {
-  const sqlSelect = "Select * from display_items";
-  db.query(sqlSelect, (error, result) => {
-    res.send(result);
-  });
+app.get("/", (req, res) => {
+    res.send("API is running...");
 });
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
