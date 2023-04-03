@@ -7,7 +7,7 @@
             const {name, email, password,phone,address} = req.body;
             if(!name || !email || !password || !phone || !address){
                 return res.send({
-                    error: "Please enter all fields"
+                    message: "Please enter all fields"
                 })
             }
 
@@ -17,7 +17,7 @@
             // check existing user
             if(existingUser){
                 return res.status(200).send({
-                    success:true,
+                    success:false,
                     message:"User already exists,Please Login"
                 })
             }
