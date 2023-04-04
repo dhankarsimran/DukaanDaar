@@ -10,11 +10,12 @@ const[email,setEmail]=useState('');
 const[password,setPassword]=useState('');
 const[address,setAddress]=useState('');
 const[phone,setPhone]=useState('');
-
+// https://dukaandaarbe-production-2727.up.railway.app/
 const handleSubmit = async (e)=>{
     e.preventDefault();
     try {
         const res = await axios.post('/api/v1/auth/signup',{name,email,password,address,phone});
+        console.log(res);
         if(res && res.data.success){
             toast.success(res.data.message);
             navigate('/login');
