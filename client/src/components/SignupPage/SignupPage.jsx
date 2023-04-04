@@ -3,6 +3,9 @@ import "./SignUpPage.css"
 import toast, { Toaster } from 'react-hot-toast';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+// import dotenv from 'dotenv';
+// import { writeFileSync, readFileSync } from 'fs';
+// dotenv.config();
 const SignupPage = () => {
 const navigate = useNavigate();
 const[name,setName]=useState('');
@@ -14,7 +17,7 @@ const[phone,setPhone]=useState('');
 const handleSubmit = async (e)=>{
     e.preventDefault();
     try {
-        const res = await axios.post('/api/v1/auth/signup',{name,email,password,address,phone});
+        const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/signup`,{name,email,password,address,phone});
         console.log(res);
         if(res && res.data.success){
             toast.success(res.data.message);
