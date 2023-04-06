@@ -8,6 +8,7 @@ import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
 import Loader from "./components/Loader/Loader";
 import { IntroPage } from "./components/IntroPage/IntroPage";
+
 function App() {
   const [loading, setLoading] = useState(true);
   const [userIn, setUserIn] = useState(false);
