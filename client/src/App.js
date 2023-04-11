@@ -8,6 +8,13 @@ import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
 import Loader from "./components/Loader/Loader";
 import { IntroPage } from "./components/IntroPage/IntroPage";
+import Dashboard from "./components/dashboard/Dashboard";
+import PrivateRoute from "./components/Routes/Private";
+import AdminRoute from "./components/Routes/AdminRoute";
+import AdminDashboard from "./components/Admin/AdminDashboard";
+import CreateCategory from "./components/Admin/CreateCategory";
+import CreateProduct from "./components/Admin/CreateProduct";
+import AllUsers from "./components/Admin/AllUsers";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -30,6 +37,21 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="intro" element={<IntroPage />} />
+              <Route path="/dashboard" element={<PrivateRoute />}>
+                <Route path="user" element={<Dashboard />} />
+              </Route>
+              <Route path="/dashboard" element={<AdminRoute />}>
+                <Route path="admin" element={<AdminDashboard />} />
+                <Route
+                  path="admin/create-category"
+                  element={<CreateCategory />}
+                />
+                <Route
+                  path="admin/create-product"
+                  element={<CreateProduct />}
+                />
+                <Route path="admin/users" element={<AllUsers />} />
+              </Route>
               <Route path="login" element={<LoginPage />} />
               <Route path="signup" element={<SignupPage />} />
               <Route path="forgotPassword" element={<ForgotPassword />} />
