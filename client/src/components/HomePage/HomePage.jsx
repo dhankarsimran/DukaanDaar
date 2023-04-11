@@ -21,25 +21,25 @@ const HomePage = () => {
     <>
     {!auth.user ?(
         <div>
-        <nav className=" relative px-8 py-4 flex  justify-between items-center ">
+        <nav className="relative flex items-center justify-between px-8 py-4 ">
           <a
-            className=" flex justify-around "
+            className="flex justify-around "
             href="#"
           >
             
               <img  className="w-1/3" src="logo.png" alt="logo" />
             <div className="flex flex-col ">
-            <p className="text-white text-2xl font-bold tracking-wide">
+            <p className="text-2xl font-bold tracking-wide text-white">
               Dukaan
             </p>
-            <p className="text-white text-xl font-semibold tracking-wide">
+            <p className="text-xl font-semibold tracking-wide text-white">
               Daar
             </p></div>
           </a>
           <div className="md:hidden">
-            <button onClick={onHamClick} className="navbar-burger flex items-center text-white p-3">
+            <button onClick={onHamClick} className="flex items-center p-3 text-white navbar-burger">
               <svg
-                className="block h-6 w-6 fill-current"
+                className="block w-6 h-6 fill-current"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -48,10 +48,10 @@ const HomePage = () => {
               </svg>
             </button>
           </div>
-          <ul className="hidden md:flex md:items-center md:justify-end grow mr-4">
+          <ul className="hidden mr-4 md:flex md:items-center md:justify-end grow">
             <li>
               <NavLink
-                className="text-white text-xl font-medium px-4 py-2 mr-8"
+                className="px-4 py-2 mr-8 text-xl font-medium text-white"
                 to="/"
               >
                 Home
@@ -59,7 +59,7 @@ const HomePage = () => {
             </li>
             <li>
               <NavLink
-                className="text-white text-xl font-medium px-4 py-2 mr-8"
+                className="px-4 py-2 mr-8 text-xl font-medium text-white"
                 to="/signup"
               >
                 Sign Up
@@ -67,7 +67,7 @@ const HomePage = () => {
             </li>
             <li>
               <NavLink
-                className="text-white text-xl font-medium px-4 py-2 mr-8"
+                className="px-4 py-2 mr-8 text-xl font-medium text-white"
                 to="/login"
               >
                 Login
@@ -81,23 +81,23 @@ const HomePage = () => {
           <ul className="flex flex-col items-center py-4">
           <li className="my-4 w-full text-center hover:text-[grey]" > 
               <NavLink
-                className="text-white text-xl font-normal py-2"
+                className="py-2 text-xl font-normal text-white"
                 to="/"
               >
                 Home
               </NavLink>
             </li>
-            <li className="my-4 w-full text-center">
+            <li className="w-full my-4 text-center">
               <NavLink
-                className="text-white text-xl font-normal  py-2"
+                className="py-2 text-xl font-normal text-white"
                 to="/signup"
               >
                 Sign Up
               </NavLink>
             </li>
-            <li className="my-4 w-full text-center">
+            <li className="w-full my-4 text-center">
               <NavLink
-                className="text-white text-xl font-normal py-2"
+                className="py-2 text-xl font-normal text-white"
                 to="/login"
               >
                 Login
@@ -111,25 +111,25 @@ const HomePage = () => {
       <>
       {auth?.user?.name &&
       <div>
-      <nav className="relative px-8 py-4 flex justify-between items-center ">
+      <nav className="relative flex items-center justify-between px-8 py-4 ">
         <a
-          className=" flex justify-around "
+          className="flex justify-around "
           href="#"
         >
           
             <img  className="w-1/3" src="logo.png" alt="logo" />
           <div className="flex flex-col ">
-          <p className="text-white text-2xl font-bold tracking-wide">
+          <p className="text-2xl font-bold tracking-wide text-white">
             Dukaan
           </p>
-          <p className="text-white text-xl font-semibold tracking-wide">
+          <p className="text-xl font-semibold tracking-wide text-white">
             Daar
           </p></div>
         </a>
         <div className="md:hidden">
-          <button onClick={onHamClick} className="navbar-burger flex items-center text-white p-3">
+          <button onClick={onHamClick} className="flex items-center p-3 text-white navbar-burger">
             <svg
-              className="block h-6 w-6 fill-current"
+              className="block w-6 h-6 fill-current"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -138,10 +138,10 @@ const HomePage = () => {
             </svg>
           </button>
         </div>
-        <ul className="hidden md:flex md:items-center md:justify-end grow mr-4">
+        <ul className="hidden mr-4 md:flex md:items-center md:justify-end grow">
           <li>
             <NavLink
-              className="text-white text-xl font-medium px-4 py-2 mr-8"
+              className="px-4 py-2 mr-8 text-xl font-medium text-white"
               to="/"
             >
               Home
@@ -149,7 +149,7 @@ const HomePage = () => {
           </li>
           <li>
             <NavLink
-              className="text-white text-xl font-medium px-4 py-2 mr-8"
+              className="px-4 py-2 mr-8 text-xl font-medium text-white"
               to={`/dashboard/${auth?.user?.role === 1 ? 'admin':'user'}`}
             >
               Dashboard
@@ -159,7 +159,7 @@ const HomePage = () => {
           <NavLink to="/login">
               <button
                 onClick={handleLogOut}
-                className="text-white text-xl font-medium px-4 py-2 mr-8"
+                className="px-4 py-2 mr-8 text-xl font-medium text-white"
                 type="submit"
               >
                 Logout
@@ -186,23 +186,23 @@ const HomePage = () => {
           <ul className="flex flex-col items-center py-4">
           <li className="my-4 w-full text-center hover:text-[grey]" > 
               <NavLink
-                className="text-white text-xl font-normal py-2"
+                className="py-2 text-xl font-normal text-white"
                 to="/"
               >
                 Home
               </NavLink>
             </li>
-            <li className="my-4 w-full text-center">
+            <li className="w-full my-4 text-center">
               <NavLink
-                className="text-white text-xl font-normal  py-2"
+                className="py-2 text-xl font-normal text-white"
                 to={`/dashboard/${auth?.user?.role === 1 ? 'admin':'user'}`}
               >
                 Dashboard
               </NavLink>
             </li>
-            <li className="my-4 w-full text-center">
+            <li className="w-full my-4 text-center">
               <NavLink
-                className="text-white text-xl font-normal py-2"
+                className="py-2 text-xl font-normal text-white"
                 to="/login"
               >
                    <button
@@ -245,3 +245,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
