@@ -21,18 +21,18 @@ const HomePage = () => {
     <>
     {!auth.user ?(
         <div>
-        <nav className="relative flex items-center justify-between px-8 py-4 ">
+        <nav className="relative flex items-center justify-between px-4 py-4 sm:px-8 ">
           <a
-            className="flex justify-around "
+            className="flex justify-start "
             href="#"
           >
             
-              <img  className="w-1/3" src="logo.png" alt="logo" />
-            <div className="flex flex-col ">
-            <p className="text-2xl font-bold tracking-wide text-white">
+              <img  className="w-1/2 sm:w-1/3" src="logo.png" alt="logo" />
+            <div className="hidden sm:ml-1 sm:flex sm:flex-col sm:justify-center">
+            <p className="text-xl font-bold tracking-wide text-white">
               Dukaan
             </p>
-            <p className="text-xl font-semibold tracking-wide text-white">
+            <p className="-mt-1 text-lg font-semibold tracking-wide text-white">
               Daar
             </p></div>
           </a>
@@ -232,7 +232,7 @@ const HomePage = () => {
     ) }
 
 {/* Search */}
-      <div className="w-[50%] mt-8 flex items-center justify-center m-auto">
+      <div className="hidden w-[45%] mt-8 sm:flex sm:items-center sm:justify-center m-auto">
        
           <input
             type="text"
@@ -240,6 +240,14 @@ const HomePage = () => {
             placeholder="What are you looking for?" />
             <div className="py-3 px-5 bg-[#4d70ff] rounded-r-xl hover:cursor-pointer hover:bg-[#6581f2]"><TbSearch  style={{color: "white", backgroundColor:"#4d70ff"}}/></div>
         </div>
+        <div className="sm:hidden w-[45%] mt-8 flex items-center justify-center m-auto">
+       
+       <input
+         type="text"
+         className=" w-full py-1.5 pl-3 pr-4 text-sm font-semibold placeholder-[#4d70ff]  bg-gray-100 dark:bg-gray-800 rounded-l-xl focus:outline-none focus:bg-white focus:text-gray-900"
+         placeholder="Search" />
+         <div className="py-2 px-3 bg-[#4d70ff] rounded-r-xl hover:cursor-pointer hover:bg-[#6581f2]"><TbSearch  style={{color: "white", backgroundColor:"#4d70ff"}}/></div>
+     </div>
     </>
   );
 };
