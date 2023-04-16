@@ -28,13 +28,13 @@ const HomePage = () => {
           >
             
               <img  className="w-1/2 sm:w-1/3" src="logo.png" alt="logo" />
-            <div className="hidden sm:ml-1 sm:flex sm:flex-col sm:justify-center">
-            <p className="text-xl font-bold tracking-wide text-white">
+            <div className="hidden sm:ml-2 sm:flex sm:flex-col sm:justify-center">
+            <div className="text-xl font-bold tracking-wide text-white">
               Dukaan
-            </p>
-            <p className="-mt-1 text-lg font-semibold tracking-wide text-white">
+            </div>
+            <div className="-mt-1 text-lg font-semibold tracking-wide text-white">
               Daar
-            </p></div>
+            </div></div>
           </a>
           <div className="md:hidden">
             <button onClick={onHamClick} className="flex items-center p-3 text-white navbar-burger">
@@ -51,7 +51,7 @@ const HomePage = () => {
           <ul className="hidden mr-4 md:flex md:items-center md:justify-end grow">
             <li>
               <NavLink
-                className="px-4 py-2 mr-8 text-xl font-medium text-white"
+                className="hover:text-[#4d70ff] px-4 py-2 mr-8 text-xl font-medium text-white"
                 to="/"
               >
                 Home
@@ -59,7 +59,7 @@ const HomePage = () => {
             </li>
             <li>
               <NavLink
-                className="px-4 py-2 mr-8 text-xl font-medium text-white"
+                className="hover:text-[#4d70ff] px-4 py-2 mr-8 text-xl font-medium text-white"
                 to="/signup"
               >
                 Sign Up
@@ -67,7 +67,7 @@ const HomePage = () => {
             </li>
             <li>
               <NavLink
-                className="px-4 py-2 mr-8 text-xl font-medium text-white"
+                className="hover:text-[#4d70ff] px-4 py-2 mr-8 text-xl font-medium text-white"
                 to="/login"
               >
                 Login
@@ -81,7 +81,7 @@ const HomePage = () => {
           <ul className="flex flex-col items-center py-4">
           <li className="my-4 w-full text-center hover:text-[grey]" > 
               <NavLink
-                className="py-2 text-xl font-normal text-white"
+                className="hover:text-[#4d70ff] py-2 text-xl font-normal text-white"
                 to="/"
               >
                 Home
@@ -89,7 +89,7 @@ const HomePage = () => {
             </li>
             <li className="w-full my-4 text-center">
               <NavLink
-                className="py-2 text-xl font-normal text-white"
+                className="hover:text-[#4d70ff] py-2 text-xl font-normal text-white"
                 to="/signup"
               >
                 Sign Up
@@ -97,7 +97,7 @@ const HomePage = () => {
             </li>
             <li className="w-full my-4 text-center">
               <NavLink
-                className="py-2 text-xl font-normal text-white"
+                className="hover:text-[#4d70ff] py-2 text-xl font-normal text-white"
                 to="/login"
               >
                 Login
@@ -113,18 +113,17 @@ const HomePage = () => {
       <div>
       <nav className="relative flex items-center justify-between px-8 py-4 ">
         <a
-          className="flex justify-around "
+          className="flex justify-start "
           href="#"
         >
-          
-            <img  className="w-1/3" src="logo.png" alt="logo" />
-          <div className="flex flex-col ">
-          <p className="text-2xl font-bold tracking-wide text-white">
-            Dukaan
-          </p>
-          <p className="text-xl font-semibold tracking-wide text-white">
-            Daar
-          </p></div>
+            <img  className="w-1/2 sm:w-1/3" src="logo.png" alt="logo" />
+            <div className="hidden ml-2 sm:flex sm:flex-col sm:justify-center">
+            <div className="text-xl font-bold tracking-wide text-white">
+              Dukaan
+            </div>
+            <div className="-mt-1 text-lg font-semibold tracking-wide text-white ">
+              Daar
+            </div></div>
         </a>
         <div className="md:hidden">
           <button onClick={onHamClick} className="flex items-center p-3 text-white navbar-burger">
@@ -141,7 +140,7 @@ const HomePage = () => {
         <ul className="hidden mr-4 md:flex md:items-center md:justify-end grow">
           <li>
             <NavLink
-              className="px-4 py-2 mr-8 text-xl font-medium text-white"
+              className="hover:text-[#4d70ff] px-4 py-2 mr-8 text-xl font-medium text-white"
               to="/"
             >
               Home
@@ -149,7 +148,7 @@ const HomePage = () => {
           </li>
           <li>
             <NavLink
-              className="px-4 py-2 mr-8 text-xl font-medium text-white"
+              className="hover:text-[#4d70ff] px-4 py-2 mr-8 text-xl font-medium text-white"
               to={`/dashboard/${auth?.user?.role === 1 ? 'admin':'user'}`}
             >
               Dashboard
@@ -159,7 +158,7 @@ const HomePage = () => {
           <NavLink to="/login">
               <button
                 onClick={handleLogOut}
-                className="px-4 py-2 mr-8 text-xl font-medium text-white"
+                className="hover:text-[#4d70ff] px-4 py-2 mr-8 text-xl font-medium text-white"
                 type="submit"
               >
                 Logout
@@ -169,10 +168,10 @@ const HomePage = () => {
           <li>
           <NavLink to="#">
               <button
-                className="text-white text-xl font-medium px-4 py-2 bg-[#4d70ff] hover:bg-[#6581f2] rounded-xl"
+                className="text-white text-xl font-medium px-4 py-2 bg-[#4d70ff] hover:bg-[#6581f2] rounded-xl -mr-3"
                 type="submit"
               >
-                <div className="flex items-center"><p className="pr-2">Cart</p> 
+                <div className="flex items-center "><div className="pr-2">Cart</div> 
                 <FaShoppingCart/></div>
                 
               </button>
@@ -182,11 +181,11 @@ const HomePage = () => {
        
       </nav>
              {/* phone */}
-    { display &&   <nav className="block md:hidden absolute bg-[#070d23] bg-opacity-90 w-full text-white">
+    { display &&  <nav className="block md:hidden  absolute bg-[#070d23] bg-opacity-90 w-full text-white">
           <ul className="flex flex-col items-center py-4">
-          <li className="my-4 w-full text-center hover:text-[grey]" > 
+          <li className="w-full my-4 text-center " > 
               <NavLink
-                className="py-2 text-xl font-normal text-white"
+                className="py-2 text-xl font-normal text-white hover:text-[#4d70ff]"
                 to="/"
               >
                 Home
@@ -194,7 +193,7 @@ const HomePage = () => {
             </li>
             <li className="w-full my-4 text-center">
               <NavLink
-                className="py-2 text-xl font-normal text-white"
+                className="hover:text-[#4d70ff] py-2 text-xl font-normal text-white"
                 to={`/dashboard/${auth?.user?.role === 1 ? 'admin':'user'}`}
               >
                 Dashboard
@@ -202,7 +201,7 @@ const HomePage = () => {
             </li>
             <li className="w-full my-4 text-center">
               <NavLink
-                className="py-2 text-xl font-normal text-white"
+                className="hover:text-[#4d70ff] py-2 text-xl font-normal text-white"
                 to="/login"
               >
                    <button
@@ -219,7 +218,7 @@ const HomePage = () => {
                 className="text-white text-xl font-medium px-4 py-2 bg-[#4d70ff] hover:bg-[#6581f2] rounded-xl"
                 type="submit"
               >
-                <div className="flex items-center"><p className="pr-2">Cart</p> 
+                <div className="flex items-center"><div className="pr-2">Cart</div> 
                 <FaShoppingCart/></div>
                 
               </button>
@@ -236,7 +235,7 @@ const HomePage = () => {
        
           <input
             type="text"
-            className=" w-full py-2 pl-4 pr-4 text-md font-semibold placeholder-[#4d70ff]  bg-gray-100 dark:bg-gray-800 rounded-l-xl focus:outline-none focus:bg-white focus:text-gray-900"
+            className=" w-full py-2.5 pl-4 pr-4 text-md font-semibold placeholder-[#4d70ff]  bg-gray-100 dark:bg-gray-800 rounded-l-xl focus:outline-none focus:bg-white focus:text-gray-900"
             placeholder="What are you looking for?" />
             <div className="py-3 px-5 bg-[#4d70ff] rounded-r-xl hover:cursor-pointer hover:bg-[#6581f2]"><TbSearch  style={{color: "white", backgroundColor:"#4d70ff"}}/></div>
         </div>
