@@ -15,6 +15,8 @@ import AdminDashboard from "./components/Admin/AdminDashboard";
 import CreateCategory from "./components/Admin/CreateCategory";
 import CreateProduct from "./components/Admin/CreateProduct";
 import AllUsers from "./components/Admin/AllUsers";
+import Products from "./components/Admin/Products";
+import UpdateProduct from "./components/Admin/UpdateProduct";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -46,10 +48,12 @@ function App() {
                   path="admin/create-category"
                   element={<CreateCategory />}
                 />
+                <Route path="admin/products" element={<Products />} />
                 <Route
                   path="admin/create-product"
                   element={<CreateProduct />}
                 />
+                <Route path="admin/product/:slug" element={<UpdateProduct />} />
                 <Route path="admin/users" element={<AllUsers />} />
               </Route>
               <Route path="login" element={<LoginPage />} />
