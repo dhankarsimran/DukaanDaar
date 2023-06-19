@@ -8,6 +8,8 @@ import {BsFillPlusCircleFill} from "react-icons/bs";
 import Navbar from "../Navbar/Navbar";
 import { Prices } from "../Prices";
 import SearchInput from "../Form/SearchInput";
+import { useCart } from "../../context/cart";
+import { toast } from "react-hot-toast";
 
 const HomePage = () => {
   const [auth, setAuth] = useAuth();
@@ -167,10 +169,16 @@ getTotal()
                 {products?.map((p)=>(
                   <button>
                 <div className=" relative lg:max-w-[12vw] lg:min-w-[12vw]  lg:max-h-fit lg:min-h-fit sm:max-w-[24vw] sm:min-w-[24vw]  sm:max-h-fit sm:min-h-fit max-w-[44vw] min-w-[44vw]  max-h-fit min-h-fit m-3 text-black rounded-3xl bg-base-100 ">
-              {  !add &&  <div onClick={addFunc} className="flex justify-end ">
-                   <button> <BsFillPlusCircleFill color="#4d70ff" size={30} className="absolute -mt-1 -ml-6"/></button>
+              { 
+              //  !add && 
+                <div onClick={addFunc} className="flex justify-end ">
+                   <button onClick={()=>{
+                    setCart([...cart,p]);
+                    localStorage.setItem("cart",JSON.stringify([...cart,p]));
+                    toast.success("item added to cart")
+                  }} > <BsFillPlusCircleFill color="#4d70ff" size={30} className="absolute -mt-1 -ml-6"/></button>
                   </div>}
-                 { add && <div onClick={addFunc} className= " p-1  items-center flex justify-evenly bg-[#4d70ff] w-[100%] h-[5vh] rounded-t-3xl absolute ">
+                 {/* { add && <div onClick={addFunc} className= " p-1  items-center flex justify-evenly bg-[#4d70ff] w-[100%] h-[5vh] rounded-t-3xl absolute ">
                    <div className="bg-white rounded w-7 h-fit">-</div>
                    <div className="text-white">1</div>
                    <div className="bg-white rounded w-7 h-fit">+</div>
