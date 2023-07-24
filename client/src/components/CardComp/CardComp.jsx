@@ -7,6 +7,8 @@ const CardComp = ({p,idx,cart,setCart}) => {
     const [add,setAdd]=useState(false);
     const [count,setCount]=useState(1);
     const navigate=useNavigate();
+    
+    
      const addFunc=()=>{
             setAdd(!add)
           }
