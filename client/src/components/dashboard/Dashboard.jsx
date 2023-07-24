@@ -2,11 +2,14 @@ import React,{useState} from 'react'
 import { useAuth } from '../../context/auth'
 import Profile from './Profile';
 import Orders from './Orders';
+import Navbar from '../Navbar/Navbar';
 
 const Dashboard = () => {
     const [auth] = useAuth();
     const[display,setDisplay] = useState("Profile")
   return (
+    <>
+    <Navbar/>
     <div className='text-[#fff] text-center'>
     <h1 className='dashBoardTitle font-bold text-2xl mt-10'>Your Dashboard</h1>
     <div className="font-semibold text-large sm:p-10">
@@ -42,6 +45,7 @@ const Dashboard = () => {
 
     </div>
 </div>
+</>
     )
 }
 

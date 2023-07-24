@@ -27,7 +27,7 @@ const Profile = () => {
     const handleSubmit = async (e)=>{
     e.preventDefault();
     try {
-        const {data} = await axios.put(`${process.env.REACT_APP_API}/api/v1/auth/profile`,{name,email,password,address,phone});
+        const {data} = await axios.put(`${process.env.REACT_APP_API}/api/v1/auth/profile`,{name,password,address,phone});
         if(data?.error){
             toast.error(data?.error);
         } else {
@@ -58,8 +58,7 @@ const Profile = () => {
                             type="email"
                             placeholder="Email"
                             value={email}
-                            onChange={(e)=>setEmail(e.target.value)}
-                            
+                            onChange={(e)=>setEmail(e.target.value)} 
                             disabled/>
                         <input className="flex h-10 text-[#4d70ff] mt-6 w-6/12 m-auto border rounded-xl border-[#ffffff] bg-[#ffffff] py-2 px-3 text-md font-medium placeholder:text-[#4d70ff] focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:opacity-50"
                             type="password"
