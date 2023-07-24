@@ -10,10 +10,11 @@ import { Prices } from "../Prices";
 import SearchInput from "../Form/SearchInput";
 import { useCart } from "../../context/cart";
 import { toast } from "react-hot-toast";
+import CardComp from "../CardComp/CardComp";
 
 const HomePage = () => {
   const [auth, setAuth] = useAuth();
-  const [cart, setCart] = useCart();
+  const [cart, setCart] = useCart([]);
   const [products,setProducts]=useState([]);
   const [categories, setCategories]=useState([]);
   const [checked,setChecked]=useState([]);
@@ -166,36 +167,8 @@ getTotal()
           <div className="flex justify-start p-5">
             {(!checked.length)? <h1 className='text-3xl font-semibold '>All Items</h1>: <h1 className='text-3xl font-semibold '>{categoryName}</h1>}</div>
             <div className='flex flex-row lg:pl-10 lg:justify-evenly carousel '>
-                {products?.map((p)=>(
-                  <button>
-                <div className=" relative lg:max-w-[12vw] lg:min-w-[12vw]  lg:max-h-fit lg:min-h-fit sm:max-w-[24vw] sm:min-w-[24vw]  sm:max-h-fit sm:min-h-fit max-w-[44vw] min-w-[44vw]  max-h-fit min-h-fit m-3 text-black rounded-3xl bg-base-100 ">
-              { 
-              //  !add && 
-                <div onClick={addFunc} className="flex justify-end ">
-                   <button onClick={()=>{
-                    setCart([...cart,p]);
-                    localStorage.setItem("cart",JSON.stringify([...cart,p]));
-                    toast.success("item added to cart")
-                  }} > <BsFillPlusCircleFill color="#4d70ff" size={30} className="absolute -mt-1 -ml-6"/></button>
-                  </div>}
-                 {/* { add && <div onClick={addFunc} className= " p-1  items-center flex justify-evenly bg-[#4d70ff] w-[100%] h-[5vh] rounded-t-3xl absolute ">
-                   <div className="bg-white rounded w-7 h-fit">-</div>
-                   <div className="text-white">1</div>
-                   <div className="bg-white rounded w-7 h-fit">+</div>
-                  </div>} */}
-                  
-                 <button className="w-full" onClick={()=>navigate(`/product/${p.slug}`)}>
-                <div className='flex justify-center mt-2 overflow-hidden rounded-3xl'><img src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`} alt="Shoes" className=' m-2 sm:min-w-fit sm:max-w-fit sm:min-h-[100px] sm:max-h-[100px] min-w-[80px] max-w-[80px] min-h-[80px] max-h-[80px]' /></div>
-                <div className=" p-1 pt-2 pl-2 bg-[#C5C5FF] rounded-b-3xl">
-                  <p className="m-0 -mt-1 font-medium text-left sm:mt-0">{p.name}</p>
-                  {/* <p className=''>{p.description.substring(0,10)}...</p> */}
-                  <p className='font-normal text-left'> $ {p.price}</p>
-                
-                </div>
-                </button>
-               
-              </div>
-              </button>
+                {products?.map((p,idx)=>(
+            <CardComp p={p} idx={idx} cart={cart} setCart={setCart}/>
               
              
                 ))}
