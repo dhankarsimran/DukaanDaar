@@ -3,7 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import { useCart } from "../../context/cart";
 import { useAuth } from "../../context/auth";
 import { useNavigate } from "react-router-dom";
-import { AiOutlineLeft } from "react-icons/ai";
+import { AiOutlineLeft , AiFillEdit } from "react-icons/ai";
 const Cart = ({openCart,setOpenCart}) => {
   const [auth, setAuth] = useAuth();
   const [cart, setCart] = useCart();
