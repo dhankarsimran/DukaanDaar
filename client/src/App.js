@@ -20,6 +20,8 @@ import UpdateProduct from "./components/Admin/UpdateProduct";
 import Search from "./components/Search";
 import ProductDetails from "./components/ProductDetails";
 import Cart from "./components/Cart/Cart";
+import Orders from "./components/dashboard/Orders";
+import Profile from "./components/dashboard/Profile";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -46,6 +48,8 @@ function App() {
               <Route path="/search" element={<Search />} />
               <Route path="/dashboard" element={<PrivateRoute />}>
                 <Route path="user" element={<Dashboard />} />
+                <Route path="user/orders" element={<Orders />} />
+                <Route path="user/profile" element={<Profile />} />
               </Route>
               <Route path="/dashboard" element={<AdminRoute />}>
                 <Route path="admin" element={<AdminDashboard />} />
