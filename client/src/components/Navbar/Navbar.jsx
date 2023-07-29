@@ -33,7 +33,7 @@ const Navbar = () => {
         <div>
           <nav className="relative flex items-center justify-between px-4 py-4 sm:px-8 ">
             <a className="flex justify-start " href="#">
-              <img className="w-1/2 sm:w-1/3" src="logo.png" alt="logo" />
+              <img className="w-1/2 sm:w-1/3" src="./logo.png" alt="logo" />
               <div className="hidden sm:ml-2 sm:flex sm:flex-col sm:justify-center">
                 <div className="text-xl font-bold tracking-wide text-white">
                   Dukaan
