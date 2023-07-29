@@ -75,7 +75,7 @@ const Cart = ({openCart,setOpenCart}) => {
         </div>
         </div>
 
-        <div className="userName mt-3  pl-4">
+        <div className="pl-4 mt-3 userName">
           <h1 className="text-xl">{`Hey ${
             auth?.token && auth?.user?.name
           }`}</h1>
@@ -87,10 +87,10 @@ const Cart = ({openCart,setOpenCart}) => {
           </h4>
         </div>
 
-        <div className="cartItems mt-8">
+        <div className="mt-8 cartItems">
           {cart?.map((p) => (
             <div className="cartItem bg-[#c5c5ff] p-2 pt-3 mt-3 rounded-2xl ml-4 mr-4">
-              <div className="cartItemBox flex justify-around">
+              <div className="flex justify-around cartItemBox">
                 <div className="itemImage min-w-[33%]  ">
                   <img
                     src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
@@ -116,23 +116,23 @@ const Cart = ({openCart,setOpenCart}) => {
           ))}
         </div>
 
-        <div className="cartTotal mt-16 p-5">
+        <div className="p-5 mt-16 cartTotal">
           <div className="delivery flex justify-between pr-3 text-[#b3adad]">
             <div className="text-sm ">Delivery</div>
             <div className="text-sm ">Free</div>
           </div>
-          <div className="totalPrice flex justify-between pr-3">
+          <div className="flex justify-between pr-3 totalPrice">
             <div className="text-lg">Grand Total</div>
             <div>₹ {cart.reduce((acc, curr) => acc + curr.price, 0)}</div>
           </div>
           {auth?.user?.address ? (
             <>
-              <div className="address flex justify-between pr-3">
+              <div className="flex justify-between pr-3 address">
                 <div className="text-lg">Address</div>
                 <p> {auth?.user?.address}</p>
               </div>
               <div
-                className="editAddress flex"
+                className="flex editAddress"
                 onClick={() => navigate("/dashboard/user/profile")}
               >
                 <p className=" text-[#4d70ff]">Edit Address </p>

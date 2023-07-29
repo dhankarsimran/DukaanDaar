@@ -23,8 +23,8 @@ const OrdersPage = () => {
     <div className="allOrderMainPage ">
       <h1 className="text-#fff">All Orders</h1>
 
-      <div className="table m-auto w-full">
-        <table className="table w-[30%] sm:w-full m-auto">
+      <div className="table w-full m-auto">
+        <table className="table w-[30%] sm:w-full m-auto text-black">
           <thead className="">
             <tr>
               <th>#</th>
@@ -50,7 +50,7 @@ const OrdersPage = () => {
                   <div className="container w-full">
                     {o?.products?.map((p,i) => (
                       <div className="cartItem bg-[#c5c5ff] p-2 pt-3 mt-3 rounded-2xl ml-4 mr-4 w-[100%]">
-                        <div className="cartItemBox flex justify-around">
+                        <div className="flex justify-around cartItemBox">
                           <div className="itemImage w-[50%]  ">
                             <img
                               src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
