@@ -161,6 +161,7 @@ const Navbar = () => {
                   </div>
                 </a>
                 <div className="md:hidden">
+                  
                   <button
                     onClick={onHamClick}
                     className="flex items-center p-3 text-white navbar-burger"
@@ -206,7 +207,7 @@ const Navbar = () => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/cart">
+                    <NavLink to="#">
                       <button
                         className="text-white text-xl font-medium px-4 py-2 bg-[#4d70ff] hover:bg-[#6581f2] rounded-xl -mr-3"
                         type="submit"

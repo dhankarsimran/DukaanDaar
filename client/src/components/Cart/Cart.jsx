@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { AiOutlineLeft, AiFillEdit } from "react-icons/ai";
 import DropIn from "braintree-web-drop-in-react";
 import axios from "axios";
-const Cart = () => {
+const Cart = ({openCart,setOpenCart}) => {
   const [auth, setAuth] = useAuth();
   const [cart, setCart] = useCart();
   const navigate = useNavigate();
@@ -59,15 +59,20 @@ const Cart = () => {
   };
   return (
     <>
-      <div className="cartContainer text-[#fff] text-lg">
-        <div className="cartTitle bg-[#4d70ff] p-3 pt-4 rounded-b-[1rem] text-center">
-          <div className="TtitleItems flex w-[60%] justify-between">
-            <AiOutlineLeft
-              className="mt-[0.35rem]"
-              onClick={() => navigate("/")}
-            />
+<div className="sm:w-[100%] sm:z-10 sm:absolute sm:flex sm:justify-end sm:backdrop-blur-lg">
+      <div className=" h-full sm:w-[35%] w-[100%] cartContainer text-[#fff] text-lg sm:bg-black">        <div className="cartTitle bg-[#4d70ff] p-3 pt-4 rounded-b-[1rem] text-center">
+      <div className="cartTitle bg-[#4d70ff] p-3 pt-4 rounded-b-[1rem] text-center">
+          {/* big screen  */}
+            <div className="TtitleItems sm:flex hidden w-[60%] justify-between">
+            <AiOutlineLeft className=" cursor-pointer mt-[0.35rem]" onClick={() => setOpenCart(false)}/>
             <h3 className="text-[#fff] font-semibold text-xl ">Checkout</h3>
-          </div>
+            </div>
+            {/* small screen  */}
+            <div className="TtitleItems flex w-[60%] justify-between sm:hidden">
+            <AiOutlineLeft className="cursor-pointer mt-[0.35rem]" onClick={() =>navigate("/")}/>
+            <h3 className="text-[#fff] font-semibold text-xl ">Checkout</h3>
+            </div>
+        </div>
         </div>
 
         <div className="userName mt-3  pl-4">
@@ -181,19 +186,30 @@ const Cart = () => {
               </div>
                 </>
               )}
-              <div className="buttonInCart w-[90%] m-auto mt-4">
+          <div className="buttonInCart w-[90%] m-auto mt-4">
+
+                {/* small screen  */}
                 <button
-                  className="btn bg-[#c5c5ff] text-[#000] border-none w-[100%] text-md mt-3"
-                  onClick={() => navigate("/")}
+                className="sm:hidden block btn bg-[#c5c5ff] text-[#000] border-none w-[100%] text-md mt-3 hover:text-[#fff]"
+                onClick={() => navigate("/")}
                 >
-                  Continue Shopping
+                Continue Shopping
                 </button>
-              </div>
+                {/* big screen  */}
+                <button
+                className="sm:block hidden btn bg-[#c5c5ff] text-[#000] border-none w-[100%] text-md mt-3 hover:text-[#fff]"
+                onClick={() => {navigate("/");
+                setOpenCart(false)}}
+                >
+                Continue Shopping
+                </button>
+            </div>
             </>
           ) : (
             ""
           )}
         </div>
+      </div>
       </div>
     </>
   );
