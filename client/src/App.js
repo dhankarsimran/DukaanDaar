@@ -22,6 +22,7 @@ import ProductDetails from "./components/ProductDetails";
 import Cart from "./components/Cart/Cart";
 import Orders from "./components/dashboard/Orders";
 import Profile from "./components/dashboard/Profile";
+import AllOrders from "./components/Admin/AllOrders";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -64,6 +65,7 @@ function App() {
                 />
                 <Route path="admin/product/:slug" element={<UpdateProduct />} />
                 <Route path="admin/users" element={<AllUsers />} />
+                <Route path="admin/orders" element={<AllOrders />} />
               </Route>
               <Route path="login" element={<LoginPage />} />
               <Route path="signup" element={<SignupPage />} />
